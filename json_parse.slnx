@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="json_parse.vcxproj" Id="6f4f3f96-0f79-45cb-b2df-64a01a86fe3d" />
+</Solution>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="interface\value.ixx">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\parser.ixx">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="json.ixx" />
+    <ClCompile Include="interface\reader.ixx">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="implementation\reader.cpp">
+      <Filter>implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="implementation\parser.cpp">
+      <Filter>implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="implementation\value.cpp">
+      <Filter>implementation</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="interface">
+      <UniqueIdentifier>{d10c60e9-8bbc-4746-85d1-8909f4fbbb5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="implementation">
+      <UniqueIdentifier>{ea98a429-fda8-4db7-a13e-12824c04772c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test">
+      <UniqueIdentifier>{41b32fca-1c4d-4d54-8840-979e1658e82a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.json">
+      <Filter>test</Filter>
+    </None>
+    <None Include=".github\copilot-instructions.md" />
+  </ItemGroup>
+</Project>
