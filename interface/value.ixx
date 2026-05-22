@@ -55,6 +55,10 @@ export namespace json
 		template<Type T>
 		T& get() { return std::get<T>(value_); }
 
+		std::size_t typeIndex() const { return value_.index(); }
+		template<Type T>
+		bool isType() const { return std::holds_alternative<T>(value_); }
+
 	private:
 
 		std::variant<Null, bool, int, double, std::string, Array, Object> value_;

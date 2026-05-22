@@ -21,6 +21,9 @@
     <ClCompile Include="implementation\value.cpp">
       <Filter>implementation</Filter>
     </ClCompile>
+    <ClCompile Include="interface\serializer.ixx">
+      <Filter>interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="interface">
@@ -38,5 +41,8 @@
       <Filter>test</Filter>
     </None>
     <None Include=".github\copilot-instructions.md" />
+    <None Include="output.json">
+      <Filter>test</Filter>
+    </None>
   </ItemGroup>
 </Project>

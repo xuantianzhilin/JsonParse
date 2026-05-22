@@ -144,12 +144,14 @@
     <ClCompile Include="implementation\value.cpp" />
     <ClCompile Include="interface\parser.ixx" />
     <ClCompile Include="interface\reader.ixx" />
+    <ClCompile Include="interface\serializer.ixx" />
     <ClCompile Include="interface\value.ixx" />
     <ClCompile Include="json.ixx" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".github\copilot-instructions.md" />
+    <None Include="output.json" />
     <None Include="test.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

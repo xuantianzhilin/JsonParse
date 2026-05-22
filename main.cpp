@@ -3,20 +3,21 @@ import std;
 
 int main()
 {
-	std::ifstream file{ "test.json", std::ios::in };
+	std::ifstream inf{ "test.json", std::ios::in };
 
-	if (file.good())
+	if (inf.good())
 	{
 		try
 		{
-			std::string jsonString = json::getAllChars(file);
+			std::string jsonString = json::getAllChars(inf);
+			inf.close();
 			json::Parser parser{ jsonString };
 			json::Value value = parser.parse();
 			std::cout << "Parsed JSON successfully!" << std::endl;
 
-			std::string_view str = value["departments"][0]["projects"][0]["deadline"];
-
-			std::cout << "Department name: " << str << std::endl;
+			std::ofstream ouf{ "output.json", std::ios::out };
+			json::Serializer::dump(value, ouf);
+			ouf.close();
 		}
 		catch (const std::exception& e)
 		{
