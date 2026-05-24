@@ -142,6 +142,7 @@
     <ClCompile Include="implementation\parser.cpp" />
     <ClCompile Include="implementation\reader.cpp" />
     <ClCompile Include="implementation\value.cpp" />
+    <ClCompile Include="interface\ordered_map.ixx" />
     <ClCompile Include="interface\parser.ixx" />
     <ClCompile Include="interface\reader.ixx" />
     <ClCompile Include="interface\serializer.ixx" />

@@ -1,6 +1,7 @@
 export module json:value;
 
 import std;
+import :ordered_map;
 
 export namespace json
 {
@@ -8,7 +9,7 @@ export namespace json
 
 	using Null = std::nullptr_t;
 	using Array = std::vector<Value>;
-	using Object = std::map<std::string, Value>;
+	using Object = json::ordered_map<std::string, Value>;
 
 	template<typename T>
 	concept Type = std::same_as<T, Null>

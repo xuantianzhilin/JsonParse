@@ -24,6 +24,9 @@
     <ClCompile Include="interface\serializer.ixx">
       <Filter>interface</Filter>
     </ClCompile>
+    <ClCompile Include="interface\ordered_map.ixx">
+      <Filter>interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="interface">
