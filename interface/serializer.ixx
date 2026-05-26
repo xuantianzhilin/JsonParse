@@ -2,6 +2,7 @@ export module json:serializer;
 
 import std;
 import :value;
+import :reader;
 
 export namespace json
 {
@@ -31,6 +32,20 @@ export namespace json
 		static void serializeArray(const Value& value, Output&& output, int layer);
 		template<typename Output>
 		static void serializeBasic(const Value& value, Output&& output);
+
+		template<typename Output>
+		static void serializeString(const std::string& str, Output&& output);
+
+		static inline const std::unordered_map<char, std::string> escapes{
+			{'\"', "\\\"" },
+			{ '\\', "\\\\" },
+			{ '/', "\\/" },
+			{ '\b', "\\b" },
+			{ '\f', "\\f" },
+			{ '\n', "\\n" },
+			{ '\r', "\\r" },
+			{ '\t', "\\t" }
+		};
 	};
 
 	std::string Serializer::dump(const Value& value)
@@ -132,7 +147,24 @@ export namespace json
 		}
 		else if (value.isType<std::string>())
 		{
-			output("\"" + value.get<std::string>() + "\"");
+			serializeString(value.get<std::string>(), std::forward<Output>(output));
 		}
+	}
+	template<typename Output>
+	void Serializer::serializeString(const std::string& str, Output&& output)
+	{
+		output("\"");
+		for (char c : str)
+		{
+			if (escapes.contains(c))
+			{
+				output(escapes.at(c));
+			}
+			else
+			{
+				output(std::string(1, c));
+			}
+		}
+		output("\"");
 	}
 }
